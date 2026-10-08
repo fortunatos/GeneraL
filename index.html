@@ -298,14 +298,23 @@
   </div>
 
 <script>
-  window.addEventListener('load', function () {
-    function scrollToBottom() {
-      window.scrollTo(0, document.documentElement.scrollHeight);
-    }
+document.addEventListener('DOMContentLoaded', function () {
+  let pararTimer;
 
+  function scrollToBottom() {
+    window.scrollTo(0, document.documentElement.scrollHeight);
+  }
+
+  const ro = new ResizeObserver(() => {
     scrollToBottom();
-    setTimeout(scrollToBottom, 100);
+    clearTimeout(pararTimer);
+    // Se a altura não mudar por 200ms, considera estabilizado e para de observar
+    pararTimer = setTimeout(() => ro.disconnect(), 200);
   });
+
+  ro.observe(document.body);
+  scrollToBottom(); // rola já no primeiro frame
+});
 </script>
 
 </body>
