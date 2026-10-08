@@ -299,21 +299,20 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  let pararTimer;
+  let ultimaAltura = 0;
 
-  function scrollToBottom() {
-    window.scrollTo(0, document.documentElement.scrollHeight);
+  function scrollLoop() {
+    const altura = document.documentElement.scrollHeight;
+    window.scrollTo(0, altura);
+
+    if (altura !== ultimaAltura) {
+      ultimaAltura = altura;
+      requestAnimationFrame(scrollLoop); // altura mudou, continua
+    }
+    // se não mudou, para naturalmente
   }
 
-  const ro = new ResizeObserver(() => {
-    scrollToBottom();
-    clearTimeout(pararTimer);
-    // Se a altura não mudar por 200ms, considera estabilizado e para de observar
-    pararTimer = setTimeout(() => ro.disconnect(), 200);
-  });
-
-  ro.observe(document.body);
-  scrollToBottom(); // rola já no primeiro frame
+  scrollLoop();
 });
 </script>
 
