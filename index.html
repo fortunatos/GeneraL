@@ -299,12 +299,12 @@
 
 <script>
   window.addEventListener('load', function () {
-    function scrollToBottom() {
-      window.scrollTo(0, document.documentElement.scrollHeight);
-    }
-
-    scrollToBottom();
-    setTimeout(scrollToBottom, 100);
+    requestAnimationFrame(function () {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'instant'
+      });
+    });
   });
 </script>
 
