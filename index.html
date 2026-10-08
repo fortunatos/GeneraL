@@ -298,14 +298,25 @@
   </div>
 
 <script>
+(function () {
+  function scrollToBottom() {
+    var height = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+
+    window.scrollTo(0, height);
+
+    if (window.scrollY + window.innerHeight < height) {
+      requestAnimationFrame(scrollToBottom);
+    }
+  }
+
   window.addEventListener('load', function () {
-    requestAnimationFrame(function () {
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: 'instant'
-      });
-    });
+    scrollToBottom();
+    requestAnimationFrame(scrollToBottom);
   });
+})();
 </script>
 
 </body>
