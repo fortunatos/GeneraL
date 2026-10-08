@@ -304,8 +304,10 @@
       window.scrollTo(0, document.documentElement.scrollHeight);
     }
 
-    scrollToBottom();
-    setTimeout(scrollToBottom, 100);
+    // Chama scrollToBottom 10 vezes em sequência
+    for (let i = 0; i < 1000; i++) {
+      scrollToBottom();
+    }
   });
 </script>
 
