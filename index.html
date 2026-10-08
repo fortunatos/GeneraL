@@ -299,7 +299,12 @@
 
 <script>
   window.addEventListener('load', function () {
-    window.scrollTo(0, document.documentElement.scrollHeight);
+    function scrollToBottom() {
+      window.scrollTo(0, document.documentElement.scrollHeight);
+    }
+
+    scrollToBottom();
+    setTimeout(scrollToBottom, 1000);
   });
 </script>
 
