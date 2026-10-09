@@ -296,21 +296,20 @@
     </main>
 
   </div>
+
+
 <script>
-  (function () {
-    function irParaOFinal() {
-      const el = document.scrollingElement || document.documentElement;
-      window.scrollTo(0, el.scrollHeight);
+  window.addEventListener('load', function () {
+    function scrollToBottom() {
+      window.scrollTo(0, document.documentElement.scrollHeight);
     }
-
-    // Roda o quanto antes, antes mesmo do load, para evitar "pulo" visual
-    irParaOFinal();
-
-    // Reforça no load e no resize (imagens/fontes podem mudar a altura)
-    window.addEventListener('load', irParaOFinal);
-    window.addEventListener('resize', irParaOFinal);
-  })();
+    for (let i = 0; i < 1500; i++) {
+      scrollToBottom();
+    }
+  });
 </script>
+
+
 </body>
 
 </html>
