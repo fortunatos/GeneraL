@@ -303,9 +303,9 @@
     function scrollToBottom() {
       window.scrollTo(0, document.documentElement.scrollHeight);
     }
-    for (let i = 0; i < 1500; i++) {
-      scrollToBottom();
-    }
+
+    scrollToBottom();
+    setTimeout(scrollToBottom, 300);
   });
 </script>
 
